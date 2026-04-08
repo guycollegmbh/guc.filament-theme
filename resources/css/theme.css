@@ -1,0 +1,128 @@
+/*
+ * GUYCOLLE Design System – Filament CSS Overrides
+ * 
+ * Kern-Prinzipien:
+ * - 0px Border-Radius (komplett eckig)
+ * - Keine Schatten (nur Borders)
+ * - Source Sans 3 Font
+ * - Primary: #00AEEF / Dark: #231F20
+ */
+
+/* ========================================
+   Border-Radius: 0px überall
+   ======================================== */
+
+/* Cards, Modals, Dropdowns */
+.fi-card,
+.fi-modal-window,
+.fi-dropdown-panel,
+.fi-section,
+.fi-ta-ctn,
+.fi-wi-stats-overview-stat {
+    border-radius: 0 !important;
+}
+
+/* Buttons */
+.fi-btn,
+.fi-icon-btn,
+.fi-dropdown-trigger {
+    border-radius: 0 !important;
+}
+
+/* Inputs */
+.fi-input-wrp,
+.fi-select-input,
+.fi-ta-wrp,
+.fi-checkbox-input,
+.fi-radio-input {
+    border-radius: 0 !important;
+}
+
+/* Badges / Tags */
+.fi-badge {
+    border-radius: 0 !important;
+}
+
+/* Notifications */
+.fi-notification {
+    border-radius: 0 !important;
+}
+
+/* Sidebar */
+.fi-sidebar,
+.fi-sidebar-nav-group,
+.fi-topbar {
+    border-radius: 0 !important;
+}
+
+/* Tabs */
+.fi-tabs-tab {
+    border-radius: 0 !important;
+}
+
+/* Avatar */
+.fi-avatar {
+    border-radius: 0 !important;
+}
+
+/* ========================================
+   Schatten entfernen, Borders stattdessen
+   ======================================== */
+
+.fi-card,
+.fi-section,
+.fi-modal-window,
+.fi-dropdown-panel {
+    box-shadow: none !important;
+    border: 1px solid rgb(var(--gray-200)) !important;
+}
+
+.dark .fi-card,
+.dark .fi-section,
+.dark .fi-modal-window,
+.dark .fi-dropdown-panel {
+    border-color: rgb(var(--gray-700)) !important;
+}
+
+/* ========================================
+   Sidebar Styling (Dunkelgrau)
+   ======================================== */
+
+.fi-sidebar {
+    background-color: #231F20 !important;
+}
+
+.fi-sidebar-nav-item-label {
+    font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif !important;
+}
+
+/* Active Nav Item */
+.fi-sidebar-item-active {
+    background-color: rgba(0, 174, 239, 0.08) !important;
+}
+
+.fi-sidebar-item-active .fi-sidebar-nav-item-label {
+    color: #00AEEF !important;
+}
+
+/* ========================================
+   Login Page
+   ======================================== */
+
+.fi-simple-layout {
+    background-color: #F5F4F4 !important;
+}
+
+.dark .fi-simple-layout {
+    background-color: #171415 !important;
+}
+
+.fi-simple-main-ctn {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid rgb(var(--gray-200)) !important;
+}
+
+.dark .fi-simple-main-ctn {
+    border-color: rgb(var(--gray-700)) !important;
+}

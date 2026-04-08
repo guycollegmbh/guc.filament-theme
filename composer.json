@@ -1,0 +1,30 @@
+{
+    "name": "guycollegmbh/filament-theme",
+    "description": "GUYCOLLE Design System – Filament Theme Plugin für alle GUYCOLLE Laravel-Apps",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "GUYCOLLE GmbH",
+            "email": "dev@guycolle.ch"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "filament/filament": "^3.0",
+        "illuminate/support": "^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Guycolle\\FilamentTheme\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Guycolle\\FilamentTheme\\GuycolleThemeServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

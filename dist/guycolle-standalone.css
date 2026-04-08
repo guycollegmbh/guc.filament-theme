@@ -1,0 +1,276 @@
+/*
+ * GUYCOLLE Design System – Standalone CSS
+ * Für Non-Filament Apps (guc.sharing, statische Seiten)
+ * 
+ * Einbindung:
+ *   <link rel="stylesheet" href="guycolle-standalone.css">
+ *   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+ */
+
+/* ========================================
+   CSS Custom Properties
+   ======================================== */
+
+:root {
+    /* Primary */
+    --gc-primary: #00AEEF;
+    --gc-primary-hover: #0090C9;
+    --gc-primary-active: #0077A8;
+    --gc-primary-light: #E8F8FE;
+
+    /* Dark */
+    --gc-dark: #231F20;
+    --gc-gray-800: #3A3536;
+    --gc-gray-500: #6B6566;
+    --gc-gray-300: #B5B2B2;
+    --gc-gray-200: #D5D3D3;
+    --gc-gray-100: #E8E6E6;
+    --gc-gray-50: #F5F4F4;
+    --gc-white: #FFFFFF;
+
+    /* Semantic */
+    --gc-success: #16A34A;
+    --gc-success-light: #DCFCE7;
+    --gc-success-text: #166534;
+    --gc-warning: #EAB308;
+    --gc-warning-light: #FEF9C3;
+    --gc-warning-text: #854D0E;
+    --gc-danger: #DC2626;
+    --gc-danger-light: #FEE2E2;
+    --gc-danger-text: #991B1B;
+    --gc-info: #00AEEF;
+    --gc-info-light: #E8F8FE;
+    --gc-info-text: #0077A8;
+
+    /* Layout */
+    --gc-radius: 0px;
+    --gc-border: 1px solid var(--gc-gray-200);
+    --gc-font: 'Source Sans 3', 'Source Sans Pro', -apple-system, sans-serif;
+
+    /* Spacing */
+    --gc-space-xs: 4px;
+    --gc-space-sm: 8px;
+    --gc-space-md: 16px;
+    --gc-space-lg: 24px;
+    --gc-space-xl: 32px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --gc-gray-50: #171415;
+        --gc-gray-100: #231F20;
+        --gc-gray-200: #3A3536;
+        --gc-gray-300: #534E4F;
+        --gc-gray-500: #8E8A8A;
+        --gc-gray-800: #D5D3D3;
+        --gc-white: #171415;
+        --gc-border: 1px solid var(--gc-gray-200);
+    }
+}
+
+/* Manual dark mode toggle */
+[data-theme="dark"] {
+    --gc-gray-50: #171415;
+    --gc-gray-100: #231F20;
+    --gc-gray-200: #3A3536;
+    --gc-gray-300: #534E4F;
+    --gc-gray-500: #8E8A8A;
+    --gc-gray-800: #D5D3D3;
+    --gc-white: #171415;
+    --gc-border: 1px solid var(--gc-gray-200);
+}
+
+/* ========================================
+   Base
+   ======================================== */
+
+body {
+    font-family: var(--gc-font);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gc-dark);
+    background: var(--gc-gray-50);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+
+.gc-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    font-family: var(--gc-font);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--gc-radius);
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.gc-btn-primary {
+    background: var(--gc-primary);
+    color: white;
+}
+.gc-btn-primary:hover { background: var(--gc-primary-hover); }
+.gc-btn-primary:active { background: var(--gc-primary-active); }
+
+.gc-btn-secondary {
+    background: var(--gc-dark);
+    color: white;
+}
+.gc-btn-secondary:hover { background: var(--gc-gray-800); }
+
+.gc-btn-outline {
+    background: transparent;
+    color: var(--gc-dark);
+    border: 1px solid var(--gc-gray-300);
+}
+.gc-btn-outline:hover { background: var(--gc-gray-100); }
+
+.gc-btn-danger {
+    background: var(--gc-danger);
+    color: white;
+}
+.gc-btn-danger:hover { background: #B91C1C; }
+
+.gc-btn-link {
+    background: transparent;
+    color: var(--gc-primary);
+    border: none;
+    padding: 8px 0;
+    text-decoration: underline;
+}
+
+/* ========================================
+   Form Elements
+   ======================================== */
+
+.gc-input,
+.gc-select,
+.gc-textarea {
+    width: 100%;
+    padding: 8px 12px;
+    font-family: var(--gc-font);
+    font-size: 14px;
+    border: 1px solid var(--gc-gray-300);
+    border-radius: var(--gc-radius);
+    background: var(--gc-white);
+    color: var(--gc-dark);
+    transition: border-color 0.15s;
+}
+.gc-input:focus,
+.gc-select:focus,
+.gc-textarea:focus {
+    outline: none;
+    border-color: var(--gc-primary);
+}
+
+.gc-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gc-gray-500);
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   Cards
+   ======================================== */
+
+.gc-card {
+    background: var(--gc-white);
+    border: var(--gc-border);
+    border-radius: var(--gc-radius);
+    padding: 16px 20px;
+}
+
+.gc-card-header {
+    padding: 12px 16px;
+    border-bottom: var(--gc-border);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ========================================
+   Badges / Tags
+   ======================================== */
+
+.gc-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: var(--gc-radius);
+}
+
+.gc-badge-success { background: var(--gc-success-light); color: var(--gc-success-text); border: 1px solid #BBF7D0; }
+.gc-badge-danger { background: var(--gc-danger-light); color: var(--gc-danger-text); border: 1px solid #FECACA; }
+.gc-badge-warning { background: var(--gc-warning-light); color: var(--gc-warning-text); border: 1px solid #FDE68A; }
+.gc-badge-info { background: var(--gc-info-light); color: var(--gc-info-text); border: 1px solid #B3E8FC; }
+.gc-badge-neutral { background: var(--gc-gray-100); color: var(--gc-gray-800); border: 1px solid var(--gc-gray-200); }
+
+/* ========================================
+   Table
+   ======================================== */
+
+.gc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.gc-table th {
+    text-align: left;
+    padding: 8px 16px;
+    font-weight: 500;
+    color: var(--gc-gray-500);
+    background: var(--gc-gray-50);
+    border-bottom: var(--gc-border);
+}
+
+.gc-table td {
+    padding: 8px 16px;
+    border-bottom: var(--gc-border);
+}
+
+/* ========================================
+   Sidebar (for non-Filament apps)
+   ======================================== */
+
+.gc-sidebar {
+    background: var(--gc-dark);
+    width: 240px;
+    min-height: 100vh;
+}
+
+.gc-sidebar-brand {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gc-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.gc-sidebar-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.gc-sidebar-item-active {
+    color: var(--gc-primary);
+    background: rgba(0, 174, 239, 0.08);
+    font-weight: 500;
+}
