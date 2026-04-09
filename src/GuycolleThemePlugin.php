@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Guycolle\FilamentTheme;
 
 use Filament\Contracts\Plugin;
+use Filament\FontProviders\GoogleFontProvider;
 use Filament\Panel;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\MaxWidth;
@@ -77,8 +78,17 @@ class GuycolleThemePlugin implements Plugin
             // Dark Mode
             ->darkMode(true)
 
-            // Font
-            ->font('Source Sans 3');
+            // Font: Source Sans 3 via Google Fonts CDN (kein Build nötig)
+            ->font(
+                family: 'Source Sans 3',
+                provider: GoogleFontProvider::class,
+            )
+
+            // Theme CSS ohne Build-Step einbinden (published by ServiceProvider)
+            ->renderHook(
+                'panels::head.end',
+                fn (): string => '<link rel="stylesheet" href="' . asset('vendor/guycolle-theme/theme.css') . '">'
+            );
     }
 
     public function boot(Panel $panel): void
