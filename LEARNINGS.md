@@ -28,3 +28,5 @@
 - `[2026-04]` Artefakte entfernt: leerer `guc/`-Ordner, `guc.zip` _(via Agent)_
 - `[2026-04]` Inline-`<style>`-Blöcke aus Blade-Components nach `theme.css` ausgelagert (`.gc-theme-footer*`, `.gc-theme-login-*`) → alle Styles zentral, keine Inline-CSS mehr _(via Agent)_
 - `[2026-04]` Font-Size-Skala proportional hochskaliert (Faktor 14/12 ≈ 1.167), kleinste Grösse ist jetzt `14px`: `12→14`, `13→15`, `14→16`, `15→18`. Betrifft `theme.css` und `guycolle-standalone.css` (+ `dist/`) _(via Agent)_
+- `[2026-04]` Typography-Tokens als CSS-Variablen eingeführt (`--gc-text-xs` bis `--gc-text-2xl`) in `:root` von `guycolle-standalone.css` **und** `theme.css` (Mirror für Filament-Scope). Alle hardcoded `font-size`-Werte ersetzt. Neue Skala: 14/15/16/18/21/26/33 px _(via Agent)_
+- `[2026-04]` h1/h2/h3 Base-Styles für Non-Filament-Apps ergänzt (nutzen `--gc-text-2xl/xl/lg`) _(via Agent)_

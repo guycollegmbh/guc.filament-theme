@@ -1,12 +1,28 @@
 /*
  * GUYCOLLE Design System – Filament CSS Overrides
- * 
+ *
  * Kern-Prinzipien:
  * - 0px Border-Radius (komplett eckig)
  * - Keine Schatten (nur Borders)
  * - Source Sans 3 Font
  * - Primary: #00AEEF / Dark: #231F20
  */
+
+/* ========================================
+   Typography Tokens
+   (gespiegelt aus guycolle-standalone.css für Filament-Scope)
+   Smallest = 14px, Faktor 14/12 vs. Ur-Skala
+   ======================================== */
+
+:root {
+    --gc-text-xs:   14px;  /* Meta, Labels, Badges, Footer */
+    --gc-text-sm:   15px;  /* Tabellen, Navigation */
+    --gc-text-base: 16px;  /* Body, Buttons, Inputs */
+    --gc-text-md:   18px;  /* Card-Header, kleine Headings */
+    --gc-text-lg:   21px;  /* h3 */
+    --gc-text-xl:   26px;  /* h2 */
+    --gc-text-2xl:  33px;  /* h1 */
+}
 
 /* ========================================
    Border-Radius: 0px überall
@@ -137,7 +153,7 @@
     border-top: 1px solid rgb(var(--gray-200));
     padding: 12px 24px;
     font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
-    font-size: 14px;
+    font-size: var(--gc-text-xs);
     color: #6B6566;
     background: transparent;
 }
