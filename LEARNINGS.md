@@ -27,3 +27,4 @@
 - `[2026-04]` Plugin: `GoogleFontProvider` für Source Sans 3 + RenderHook für theme.css _(via Agent)_
 - `[2026-04]` Artefakte entfernt: leerer `guc/`-Ordner, `guc.zip` _(via Agent)_
 - `[2026-04]` Inline-`<style>`-Blöcke aus Blade-Components nach `theme.css` ausgelagert (`.gc-theme-footer*`, `.gc-theme-login-*`) → alle Styles zentral, keine Inline-CSS mehr _(via Agent)_
+- `[2026-04]` Font-Size-Skala proportional hochskaliert (Faktor 14/12 ≈ 1.167), kleinste Grösse ist jetzt `14px`: `12→14`, `13→15`, `14→16`, `15→18`. Betrifft `theme.css` und `guycolle-standalone.css` (+ `dist/`) _(via Agent)_
