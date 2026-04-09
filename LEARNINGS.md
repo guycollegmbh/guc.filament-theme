@@ -26,3 +26,4 @@
 - `[2026-04]` ServiceProvider: mehrere Publish-Tags, Standalone-CSS aus `dist/` _(via Agent)_
 - `[2026-04]` Plugin: `GoogleFontProvider` für Source Sans 3 + RenderHook für theme.css _(via Agent)_
 - `[2026-04]` Artefakte entfernt: leerer `guc/`-Ordner, `guc.zip` _(via Agent)_
+- `[2026-04]` Inline-`<style>`-Blöcke aus Blade-Components nach `theme.css` ausgelagert (`.gc-theme-footer*`, `.gc-theme-login-*`) → alle Styles zentral, keine Inline-CSS mehr _(via Agent)_
