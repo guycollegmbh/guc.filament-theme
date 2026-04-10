@@ -112,13 +112,49 @@
     font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif !important;
 }
 
+/* ========================================
+   v1.0.2 – Sidebar Contrast & Logo Dark-Mode Fixes
+   Ref: QualiPlus 2.0 QA Walkthrough 2026-04-10 (Issue #70)
+   Sidebar-BG ist in beiden Modi #231F20 → Text-/Icon-Farben
+   müssen explizit hell sein, sonst fallen Filament-Defaults
+   im Light Mode auf dunkle Werte zurück (unlesbar, 1.35:1).
+   ======================================== */
+
+/* F-04: Sidebar-Header an Sidebar-BG angleichen (beide Modi) */
+.fi-sidebar-header {
+    background-color: #231F20 !important;
+}
+
+/* F-01: Inaktive Sidebar-Items lesbar machen */
+.fi-sidebar-item-label,
+.fi-sidebar-item-button .fi-sidebar-item-label {
+    color: #D5D3D3 !important;
+}
+
+.fi-sidebar-item .fi-sidebar-item-icon {
+    color: #8E8A8A !important;
+}
+
+/* F-02: Group-Labels lesbar machen */
+.fi-sidebar-group-label {
+    color: #8E8A8A !important;
+}
+
 /* Active Nav Item */
 .fi-sidebar-item-active {
     background-color: rgba(0, 174, 239, 0.08) !important;
 }
 
-.fi-sidebar-item-active .fi-sidebar-nav-item-label {
+/* F-03: Active-Nav korrekter Selector (ohne "-nav-" Infix) */
+.fi-sidebar-item-active .fi-sidebar-item-label,
+.fi-sidebar-item-active .fi-sidebar-item-icon {
     color: #00AEEF !important;
+}
+
+/* F-05: Sidebar-Logo im Dark Mode invertieren
+   TODO v1.1.0: stattdessen logo-full-dark.svg bündeln und via CSS wechseln */
+.dark .fi-sidebar-header .fi-logo {
+    filter: invert(1) hue-rotate(180deg);
 }
 
 /* ========================================
