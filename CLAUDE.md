@@ -127,3 +127,14 @@ $panel
 - ❌ Hardcoded Farben in Apps (→ CSS Variables / Filament Color Config)
 - ❌ Eigene Button-Styles in Apps (→ Theme liefert alles)
 - ❌ Logo als PNG einbinden (→ immer SVG)
+
+## Release-Prozess
+
+1. Feature-Branch mergen auf `main`
+2. Auf `main` wechseln, `git pull`
+3. **Smoke-Test in leerer Testapp** (siehe LEARNINGS `[2026-04]`): `composer require` via Path-Repo + `vendor:publish --tag=guycolle-theme --force` – nur wenn alle 5 Dateien (`logo-full.svg`, `logo-icon.svg`, `favicon.svg`, `theme.css`, `guycolle-standalone.css`) unter `public/vendor/guycolle-theme/` ankommen, darf getagged werden
+4. Semver-Version bestimmen: Patch (Bugfix), Minor (neue Features, abwärtskompatibel), Major (Breaking)
+5. Tag: `git tag -a vX.Y.Z -m "release: vX.Y.Z – <kurzbeschreibung>"`
+6. Push: `git push origin vX.Y.Z`
+7. GitHub Release erstellen mit Release-Notes (Fixed/Added/Changed/Migration)
+8. `LEARNINGS.md` updaten falls ein Stolperstein entdeckt wurde

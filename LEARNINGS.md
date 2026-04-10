@@ -17,6 +17,7 @@
 - `[2026-04]` Sidebar-Farbe kann nicht via Filament Color Config gesetzt werden → CSS Override nötig _(via Projektleiter)_
 - `[2026-04]` Publish-Tags: `guycolle-theme` (alles) | `guycolle-theme-assets` (nur SVGs) | `guycolle-theme-css` (nur theme.css) | `guycolle-theme-standalone` (standalone.css) | `guycolle-theme-views` (Blade) _(via Agent)_
 - `[2026-04]` Assets werden nach `public/vendor/guycolle-theme/` publiziert → App muss `php artisan vendor:publish --tag=guycolle-theme` nach jedem `composer update` ausführen _(via Agent)_
+- `[2026-04]` Release-Tags NIEMALS auf den initial commit setzen. Tag erst dann, wenn ein End-to-End Smoke-Test in einer leeren Laravel+Filament-App (via `composer require` + `vendor:publish --tag=guycolle-theme`) Logo, Favicon und theme.css nachweislich im `public/vendor/guycolle-theme/` Verzeichnis landet. v1.0.0 wurde auf `6d003e8` getagged als das Paket nur Farb-Palette und Font-Name enthielt, aber noch keine Assets, keinen renderHook und keine funktionierenden Publish-Tags. Folge: v1.0.1 Hotfix einen Tag später. _(via Fullstack Dev)_
 
 ---
 
