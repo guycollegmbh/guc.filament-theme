@@ -151,10 +151,19 @@
     color: #00AEEF !important;
 }
 
-/* F-05: Sidebar-Logo im Dark Mode invertieren
-   TODO v1.1.0: stattdessen logo-full-dark.svg bündeln und via CSS wechseln */
-.dark .fi-sidebar-header .fi-logo {
-    filter: invert(1) hue-rotate(180deg);
+/* ========================================
+   v1.1.0 – Sidebar-Logo sauber via dedizierte SVG-Variante
+   Ref: QualiPlus 2.0 QA Walkthrough #70 Runde 2, Finding S-01
+   Sidebar-Header ist in beiden Modi #231F20 → das Original
+   logo-full.svg (GUY-Schriftzug + Deko-Rects in rgb(35,31,32))
+   verschwindet im Light Mode im Header-BG. Wir swappen deshalb
+   grundsätzlich auf logo-full-dark.svg (identische Geometrie,
+   dunkle Fills auf weiss getauscht). Ersetzt den v1.0.2
+   Invert-Filter-Hack mit pixel-scharfem Original-SVG.
+   ======================================== */
+
+.fi-sidebar-header .fi-logo {
+    content: url('/vendor/guycolle-theme/logo-full-dark.svg');
 }
 
 /* ========================================
